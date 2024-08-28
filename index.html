@@ -1,0 +1,43 @@
+<html>
+    <head>
+      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <py-env>
+        - numpy
+        - matplotlib
+      </py-env>
+    </head>
+
+<body>
+
+<py-script>
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
+
+# Create data
+X = np.arange(-5, 5, 0.25)
+Y = np.arange(-5, 5, 0.25)
+X, Y = np.meshgrid(X, Y)
+Z = np.sin(2*np.sqrt(X**2 + Y**2))-X/6
+
+fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+
+# Create a figure and a 3D Axes
+fig.set_size_inches(9,9)
+
+#ax = fig.add_subplot(111, projection='3d')
+
+# Plot the surface
+surf = ax.plot_surface(X, Y, Z, cmap='viridis')
+
+# Add a color bar which maps values to colors
+fig.colorbar(surf)
+
+# Show the plot
+plt
+
+
+</py-script>
+  　</body>
+</html>
