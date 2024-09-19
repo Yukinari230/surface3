@@ -19,7 +19,7 @@ from mpl_toolkits.mplot3d import Axes3D
 X = np.arange(-5, 5, 0.25)
 Y = np.arange(-5, 5, 0.25)
 X, Y = np.meshgrid(X, Y)
-Z = np.sin(2*np.sqrt(X**2 + Y**2))-X/6
+Z = np.sin(2*np.sqrt(np.sin(X+Y)))-X/6
 
 fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
 
